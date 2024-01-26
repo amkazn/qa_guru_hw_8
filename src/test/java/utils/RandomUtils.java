@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
 
 public class RandomUtils {
 
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(getRandomSubjects()));
+    }
+
     public static String getRandomString(int len){
         String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -49,9 +53,6 @@ public class RandomUtils {
 
         Set<String> subjects = new HashSet<>();
         int randSize = getRandomInt(1, lines.size());
-
-        while (subjects.size() != randSize)
-            subjects.add(lines.get(getRandomInt(0, lines.size()-1)));
 
         return getRandomUniqueStrings(lines);
     }
