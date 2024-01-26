@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            'com.github.javafaker:javafaker:1.0.2',
+            "com.codeborne:selenide:7.0.4",
+            "org.junit.jupiter:junit-jupiter:5.10.1"
+    )
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
